@@ -35,11 +35,11 @@ class LedInteraction:
         Turns LED on
         :return: None
         """
-        if self.__led_type is "scrollLock":
+        if self.__led_type == "scrollLock":
             run_bash_command(self.__led_on + " | " + self.__scrollLockChange)
-        elif self.__led_type is "capsLock":
+        elif self.__led_type == "capsLock":
             run_bash_command(self.__led_on + " | " + self.__capsLockChange)
-        elif self.__led_type is "numLock":
+        elif self.__led_type == "numLock":
             run_bash_command(self.__led_on + " | " + self.__numLockChange)
         else:
             raise ValueError("self.__led_type is not of expected type, please check that __init__ was successful")
@@ -49,11 +49,11 @@ class LedInteraction:
         Turns LED off
         :return: None
         """
-        if self.__led_type is "scrollLock":
+        if self.__led_type == "scrollLock":
             run_bash_command(self.__led_off + " | " + self.__scrollLockChange)
-        elif self.__led_type is "capsLock":
+        elif self.__led_type == "capsLock":
             run_bash_command(self.__led_off + " | " + self.__capsLockChange)
-        elif self.__led_type is "numLock":
+        elif self.__led_type == "numLock":
             run_bash_command(self.__led_off + " | " + self.__numLockChange)
         else:
             raise ValueError("self.__led_type is not of expected type, please check that __init__ was successful")
