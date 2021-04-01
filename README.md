@@ -39,7 +39,8 @@ python3 /media/sf_TM129/Github/piMorseCodeLEDs/piMorseCodeLEDs/main.py --help
 ```
 
 3. Run script in sudo to do some morse code translation
-_Note_: Requires sudo to access the i/o items
+
+_Note_: Requires sudo to access /sys/class/leds as explained [here](https://www.kernel.org/doc/html/latest/leds/leds-class.html)
 ```bash
 pi@raspberry:~ $ sudo python3 /media/sf_TM129/Github/piMorseCodeLEDs/piMorseCodeLEDs/main.py --led capsLock --message 'Hello World'
 ----------------------------------------------------------------------------------------------------
