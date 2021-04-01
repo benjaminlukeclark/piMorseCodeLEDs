@@ -1,9 +1,18 @@
+from MorseCode import MorseCode
 from LedInteraction import LedInteraction
+from MorseToLed import MorseToLed
 from time import sleep
 
-print("test start")
-LedClass = LedInteraction("capsLock")
-LedClass.led_on()
-sleep(5)
-LedClass.led_off()
-print("test end")
+
+# Encrypt our text into morse code
+test_message = "SoS"
+MorseClass = MorseCode()
+print("Test message: " + test_message)
+EncryptedText = MorseClass.encrypt(test_message)
+
+# Setup interface to hardware
+LedInterface = LedInteraction("capsLock")
+
+# Communicate message
+Translator = MorseToLed(LedInterface, EncryptedText)
+Translator.communicate_message()
